@@ -1,12 +1,14 @@
 openapi: 3.0.1
-
 info:
   title: CIS
   version: "1.0"
-
+  description: API for retrieving user profiles.
+servers:
+  - url: https://example.com
 paths:
   /Users:
     get:
+      summary: Retrieve users list
       operationId: getUsers
       responses:
         "200":
