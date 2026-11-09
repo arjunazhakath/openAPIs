@@ -1,47 +1,24 @@
 openapi: 3.0.1
 
 info:
-  title: CIS Users API
-  version: 1.0.0
+  title: CIS
+  version: "1.0"
 
 paths:
   /Users:
     get:
       operationId: getUsers
-      summary: Get users
-
-      parameters:
-        - name: filter
-          in: query
-          required: false
-          schema:
-            type: string
-
       responses:
         "200":
-          description: Successful response
+          description: Success
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  totalResults:
-                    type: integer
-                  Resources:
-                    type: array
-                    items:
-                      $ref: "#/components/schemas/User"
-
-components:
-  schemas:
-    User:
-      type: object
-      properties:
-        id:
-          type: string
-        userName:
-          type: string
-        displayName:
-          type: string
-        active:
-          type: boolean
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    userName:
+                      type: string
